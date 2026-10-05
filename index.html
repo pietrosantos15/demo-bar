@@ -1,122 +1,233 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Boteco Azulejo | Chope gelado, petisco e samba</title>
-<meta name="description" content="Cardápio, happy hour, agenda de música ao vivo e reserva de mesa pelo WhatsApp.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lúpulo Vivo | Tap house de cerveja artesanal, petisco e jogo</title>
+<meta name="description" content="Lúpulo Vivo Tap House: 10 torneiras de chope artesanal, burgers, petiscos, torre de chope, happy hour e agenda da semana. Site de demonstração.">
+<meta name="theme-color" content="#1A1A18">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Chivo:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip" href="#torneiras">Pular para o conteúdo</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="hop" viewBox="0 0 64 64">
+      <mask id="hm" maskUnits="userSpaceOnUse" x="0" y="0" width="64" height="64">
+        <path d="M32 14C46 14 55 27 52 40C50 52 41 61 32 62C23 61 14 52 12 40C9 27 18 14 32 14Z" fill="#fff"/>
+        <g fill="none" stroke="#000" stroke-width="3" stroke-linecap="round"><path d="M13 28Q32 40 51 28"/><path d="M14 40Q32 52 50 40"/><path d="M18 51Q32 58 46 51"/><path d="M32 16V30"/></g>
+      </mask>
+      <path d="M32 14C46 14 55 27 52 40C50 52 41 61 32 62C23 61 14 52 12 40C9 27 18 14 32 14Z" fill="currentColor" mask="url(#hm)"/>
+      <path d="M32 15C30 8 24 4 16 5C17 12 23 16 32 15Z" fill="currentColor"/>
+      <path d="M32 15C34 9 40 6 47 7C45 13 40 16 32 15Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="glass" viewBox="0 0 80 120">
+      <path d="M12 6h56l-6 100a8 8 0 0 1-8 8H26a8 8 0 0 1-8-8L12 6Z" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round"/>
+      <path class="beer" d="M17 30h46l-4.2 75a4 4 0 0 1-4 4H25.200a4 4 0 0 1-4-4L17 30Z"/>
+      <path class="foam" d="M14 8h52l-1.500 20c-5 4-9 0-13 3s-8 1-12 3-9 0-13-3-8 1-11-3L14 8Z"/>
+      <circle cx="34" cy="62" r="2.500" class="bub"/><circle cx="46" cy="80" r="2" class="bub"/><circle cx="40" cy="96" r="2.500" class="bub"/><circle cx="50" cy="52" r="1.800" class="bub"/>
+    </symbol>
+  </defs>
+</svg>
 
 <header class="top">
-  <a class="brand" href="#inicio" data-brand>Boteco Azulejo</a>
-  <nav aria-label="Principal">
-    <a href="#cardapio">Cardápio</a>
+  <a class="brand" href="#inicio" aria-label="Lúpulo Vivo, início">
+    <svg class="logo" viewBox="0 0 48 48" role="img" aria-label="Logotipo Lúpulo Vivo">
+      <rect x="1.500" y="1.500" width="45" height="45" fill="#146FF8" stroke="#F0EBE4" stroke-width="3"/>
+      <use href="#hop" x="8" y="6" width="32" height="32" style="color:#F0EBE4"/>
+      <rect x="1.500" y="38" width="45" height="8.500" fill="#1A1A18"/>
+      <text x="24" y="45" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="7" textLength="38" lengthAdjust="spacingAndGlyphs" fill="#F5A623">TAP HOUSE</text>
+    </svg>
+    <span class="wm"><b data-brand>Lúpulo Vivo</b><small>Tap House</small></span>
+  </a>
+  <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+  <nav id="menu" aria-label="Principal">
+    <a href="#torneiras">Na torneira</a>
+    <a href="#comida">Comida</a>
+    <a href="#torre">Torre</a>
     <a href="#agenda">Agenda</a>
-    <a href="#reservas">Reservas</a>
-    <a href="#contato">Contato</a>
+    <a href="#historia">História</a>
+    <a href="#local">Onde</a>
   </nav>
-  <p class="status" id="status" aria-live="polite">Confira o horário</p>
+  <a class="btn btn-sm" data-wa="Olá! Quero reservar uma mesa." href="https://wa.me/5500900000000">Reservar</a>
 </header>
 
 <main id="inicio">
   <section class="hero">
-    <div class="sign">
-      <h1>Chope gelado, petisco bom e samba às quartas</h1>
-      <p>Boteco de esquina com mesa na calçada, música ao vivo e preço justo. Reserve a sua pelo WhatsApp e chegue direto para sentar.</p>
-      <div class="actions">
-        <a class="btn" href="#reservas">Reservar mesa</a>
-        <a class="btn btn-ghost" href="#cardapio">Ver cardápio</a>
+    <div class="hero-copy">
+      <p class="tag mono"><span id="status" class="dot">Verificando horário</span></p>
+      <h1>Cerveja<br>com <em>atitude</em>,<br>mesa com<br>barulho.</h1>
+      <p class="lead">Dez torneiras, burger de respeito e jogo no telão. Chega, pede o primeiro e deixa o resto com a gente.</p>
+      <div class="cta">
+        <a class="btn" href="#torneiras">Ver a torneira</a>
+        <a class="btn btn-ghost" data-wa="Olá! Quero reservar uma mesa." href="https://wa.me/5500900000000">Chamar no WhatsApp</a>
       </div>
     </div>
-
-    <svg class="glass" viewBox="0 0 220 320" role="img" aria-label="Ilustração de um copo de chope gelado com espuma">
-      <defs>
-        <linearGradient id="chope" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD470"/><stop offset="1" stop-color="#F0A21E"/></linearGradient>
-        <clipPath id="copo"><path d="M44 62h132l-14 224a14 14 0 0 1-14 13H72a14 14 0 0 1-14-13z"/></clipPath>
-      </defs>
-      <path d="M176 100h22a20 20 0 0 1 20 20v70a20 20 0 0 1-20 20h-26" fill="none" stroke="#FAFAF7" stroke-width="12" stroke-linecap="round"/>
-      <path d="M44 62h132l-14 224a14 14 0 0 1-14 13H72a14 14 0 0 1-14-13z" fill="url(#chope)"/>
-      <g clip-path="url(#copo)" fill="#FAFAF7" opacity=".85">
-        <circle class="b b1" cx="88" cy="270" r="4"/><circle class="b b2" cx="118" cy="280" r="3"/>
-        <circle class="b b3" cx="140" cy="265" r="5"/><circle class="b b4" cx="104" cy="285" r="3.5"/><circle class="b b5" cx="128" cy="275" r="2.5"/>
-      </g>
-      <path d="M44 62h132l-14 224a14 14 0 0 1-14 13H72a14 14 0 0 1-14-13z" fill="none" stroke="#FAFAF7" stroke-width="8" stroke-linejoin="round"/>
-      <g fill="#FAFAF7">
-        <circle cx="62" cy="52" r="26"/><circle cx="96" cy="40" r="30"/><circle cx="134" cy="40" r="30"/><circle cx="164" cy="54" r="24"/><rect x="48" y="52" width="124" height="30"/>
-      </g>
-    </svg>
-  </section>
-
-  <div class="ribbon"><p><strong>Happy hour</strong> de terça a sexta, das 17h às 20h: chope em dobro.</p></div>
-
-  <section id="cardapio" class="block">
-    <h2>Cardápio</h2>
-    <p class="lead">Valores de exemplo. O cardápio completo e a carta de drinks ficam na mesa e no WhatsApp.</p>
-    <div class="menu">
-      <div>
-        <h3>Chopes</h3>
-        <ul class="prices">
-          <li><span>Pilsen, 300 ml</span><i></i><b>R$ 9</b></li>
-          <li><span>Pilsen, 500 ml</span><i></i><b>R$ 14</b></li>
-          <li><span>IPA, 400 ml</span><i></i><b>R$ 22</b></li>
-          <li><span>Escuro, 400 ml</span><i></i><b>R$ 18</b></li>
-          <li><span>Torre de chope, 3 litros</span><i></i><b>R$ 89</b></li>
-        </ul>
-        <h3>Drinks</h3>
-        <ul class="prices">
-          <li><span>Caipirinha</span><i></i><b>R$ 22</b></li>
-          <li><span>Caipiroska</span><i></i><b>R$ 26</b></li>
-          <li><span>Gin tônica</span><i></i><b>R$ 34</b></li>
-          <li><span>Aperol spritz</span><i></i><b>R$ 32</b></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Petiscos</h3>
-        <ul class="prices">
-          <li><span>Mandioca frita</span><i></i><b>R$ 32</b></li>
-          <li><span>Bolinho de bacalhau, 6 unidades</span><i></i><b>R$ 42</b></li>
-          <li><span>Torresmo crocante</span><i></i><b>R$ 36</b></li>
-          <li><span>Pastel de feira, 4 unidades</span><i></i><b>R$ 34</b></li>
-          <li><span>Tábua de frios</span><i></i><b>R$ 68</b></li>
-          <li><span>Caldinho de feijão</span><i></i><b>R$ 18</b></li>
-        </ul>
-        <h3>Sem álcool</h3>
-        <ul class="prices">
-          <li><span>Refrigerante</span><i></i><b>R$ 7</b></li>
-          <li><span>Suco natural</span><i></i><b>R$ 12</b></li>
-          <li><span>Água com gás</span><i></i><b>R$ 6</b></li>
-        </ul>
-      </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="sticker s1 mono">10 torneiras<br>sempre geladas</div>
+      <div class="sticker s2">Hoje<br>tem<br>chope</div>
+      <svg class="g g1" viewBox="0 0 80 120" style="--b:#F5A623"><use href="#glass"/></svg>
+      <svg class="g g2" viewBox="0 0 80 120" style="--b:#7A3B12"><use href="#glass"/></svg>
+      <svg class="g g3" viewBox="0 0 80 120" style="--b:#E8C25B"><use href="#glass"/></svg>
+      <svg class="hopbig" viewBox="0 0 64 64"><use href="#hop"/></svg>
     </div>
   </section>
 
-  <div class="strip" aria-hidden="true"></div>
+  <div class="info">
+    <div><span class="mono">Endereço</span><b>Rua do Lúpulo, 420<br>Centro, Sorocaba/SP</b></div>
+    <div><span class="mono">Ter a dom</span><b>17h até meia-noite<br>sábado até 1h</b></div>
+    <div><span class="mono">Segunda</span><b>Fechado<br>(a torneira descansa)</b></div>
+    <div><span class="mono">Happy hour</span><b>Ter a sex, 17h às 20h<br>chope em dobro</b></div>
+  </div>
 
-  <section id="agenda" class="block">
-    <h2>Agenda da semana</h2>
-    <table class="agenda">
-      <tbody>
-        <tr><th scope="row">Terça</th><td>Pagode no sofá, com violão e voz</td><td>19h</td></tr>
-        <tr><th scope="row">Quarta</th><td>Samba de raiz com roda aberta</td><td>20h</td></tr>
-        <tr><th scope="row">Quinta</th><td>Quiz de boteco, com rodada de chope para o time vencedor</td><td>20h</td></tr>
-        <tr><th scope="row">Sexta</th><td>DJ de MPB, rock nacional e funk antigo</td><td>21h</td></tr>
-        <tr><th scope="row">Sábado</th><td>Roda de samba e feijoada leve</td><td>16h</td></tr>
-        <tr><th scope="row">Domingo</th><td>Futebol no telão, com petiscos em dobro</td><td>16h</td></tr>
-      </tbody>
-    </table>
+  <div class="marquee" aria-hidden="true">
+    <div class="track">
+      <span>Chope gelado ★ Burger de respeito ★ Jogo no telão ★ Quiz toda quarta ★ Torre de chope ★ Música ao vivo ★ </span>
+      <span>Chope gelado ★ Burger de respeito ★ Jogo no telão ★ Quiz toda quarta ★ Torre de chope ★ Música ao vivo ★ </span>
+    </div>
+  </div>
+
+  <section id="torneiras" class="sec">
+    <div class="sec-head">
+      <h2>Na torneira</h2>
+      <p>Dez rótulos da casa, todos fictícios e todos prontos para o primeiro gole. Filtre por estilo e escolha o seu amargor.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Filtrar por estilo">
+      <button class="chip on" data-f="todas" aria-pressed="true">Todas</button>
+      <button class="chip" data-f="leve" aria-pressed="false">Leves</button>
+      <button class="chip" data-f="ipa" aria-pressed="false">IPAs</button>
+      <button class="chip" data-f="ale" aria-pressed="false">Ales</button>
+      <button class="chip" data-f="escura" aria-pressed="false">Escuras</button>
+      <button class="chip" data-f="azeda" aria-pressed="false">Azedas</button>
+      <span class="count mono" id="count" aria-live="polite"></span>
+    </div>
+    <div class="taps" id="taps"></div>
+    <p class="legend mono">ABV: teor alcoólico &nbsp;·&nbsp; IBU: amargor (0 a 80) &nbsp;·&nbsp; 300 ml / 500 ml</p>
   </section>
 
-  <section id="reservas" class="block block-blue">
-    <div class="book">
-      <div>
-        <h2>Reserve a sua mesa</h2>
-        <p class="lead">Preencha e a mensagem abre pronta no WhatsApp. Seguramos a mesa por 15 minutos depois do horário marcado. Para grupos acima de 12 pessoas, chame direto.</p>
+  <section id="comida" class="sec board">
+    <div class="sec-head">
+      <h2>Comida de boteco, <br>atitude de pub</h2>
+      <p>O quadro muda quando a cozinha quer. Tudo sai da chapa para a mesa em minutos.</p>
+    </div>
+    <div class="cols">
+      <div class="col">
+        <h3><span class="mono">01</span> Petiscos</h3>
+        <ul>
+          <li><span>Bolinho de costela</span><i></i><b>R$ 34</b></li>
+          <li><span>Batata rústica com cheddar e bacon</span><i></i><b>R$ 32</b></li>
+          <li><span>Asinha crocante, molho de cerveja e mel</span><i></i><b>R$ 38</b></li>
+          <li><span>Queijo coalho com melaço de cana</span><i></i><b>R$ 29</b></li>
+          <li><span>Pastelzinho de carne seca (8 un.)</span><i></i><b>R$ 31</b></li>
+        </ul>
       </div>
+      <div class="col">
+        <h3><span class="mono">02</span> Burgers</h3>
+        <ul>
+          <li><span>Barão: 180 g, cheddar, cebola caramelizada</span><i></i><b>R$ 42</b></li>
+          <li><span>Lúpulo: blend, picles da casa, maionese defumada</span><i></i><b>R$ 44</b></li>
+          <li><span>Duplo Fumaça: 2 carnes, bacon, barbecue</span><i></i><b>R$ 52</b></li>
+          <li><span>Frango Crocante com molho picante</span><i></i><b>R$ 39</b></li>
+          <li><span>Cogumelo e queijo (vegetariano)</span><i></i><b>R$ 40</b></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3><span class="mono">03</span> Porções</h3>
+        <ul>
+          <li><span>Fritas da casa (individual)</span><i></i><b>R$ 24</b></li>
+          <li><span>Isca de peixe empanada, molho tártaro</span><i></i><b>R$ 54</b></li>
+          <li><span>Mandioca frita com carne de sol</span><i></i><b>R$ 49</b></li>
+          <li><span>Tábua de frios e pães (para 3)</span><i></i><b>R$ 68</b></li>
+          <li><span>Onion rings gigantes</span><i></i><b>R$ 28</b></li>
+        </ul>
+      </div>
+    </div>
+    <p class="legend mono">Valores fictícios, apenas para demonstração.</p>
+  </section>
+
+  <section id="torre" class="sec combos">
+    <div class="sec-head">
+      <h2>Torre de chope<br>e combos</h2>
+      <p>Para quem chega em grupo e não quer levantar toda hora.</p>
+    </div>
+    <div class="cards">
+      <article class="card feat">
+        <svg class="tower" viewBox="0 0 60 150" aria-hidden="true"><rect x="14" y="36" width="32" height="96" fill="#F5A623" stroke="#F0EBE4" stroke-width="4"/><rect x="14" y="36" width="32" height="14" fill="#F0EBE4"/><rect x="8" y="132" width="44" height="10" fill="#F0EBE4"/><rect x="24" y="8" width="12" height="28" fill="#146FF8" stroke="#F0EBE4" stroke-width="3"/><circle cx="24" cy="70" r="2.500" fill="#F0EBE4"/><circle cx="35" cy="95" r="2" fill="#F0EBE4"/><circle cx="26" cy="112" r="2.500" fill="#F0EBE4"/></svg>
+        <p class="mono label">Para 4 a 6 pessoas</p>
+        <h3>Torre 3,5 L</h3>
+        <p>Escolha o estilo da torneira, mesa com sua própria bica e chope sempre na temperatura.</p>
+        <b class="price">R$ 129</b>
+      </article>
+      <article class="card">
+        <p class="mono label">Combo dupla</p>
+        <h3>Burger + 2 chopes</h3>
+        <p>Qualquer burger com dois chopes de 300 ml das torneiras leves.</p>
+        <b class="price">R$ 64</b>
+      </article>
+      <article class="card">
+        <p class="mono label">Combo jogo</p>
+        <h3>Asinha + torre</h3>
+        <p>Asinha crocante e torre de 3,5 L no dia de jogo transmitido no telão.</p>
+        <b class="price">R$ 158</b>
+      </article>
+      <article class="card">
+        <p class="mono label">Degustação</p>
+        <h3>Paddle com 5</h3>
+        <p>Cinco copinhos de 100 ml, escolhidos por você ou pelo cervejeiro da casa.</p>
+        <b class="price">R$ 36</b>
+      </article>
+    </div>
+  </section>
+
+  <section id="agenda" class="sec agenda">
+    <div class="sec-head">
+      <h2>Semana na<br>Lúpulo Vivo</h2>
+      <p>Tem programa quase todo dia. A segunda descansa para a terça chegar com força.</p>
+    </div>
+    <div class="ag-grid">
+      <div class="happy">
+        <p class="mono label">Happy hour</p>
+        <h3>Ter a sex<br>17h às 20h</h3>
+        <ul>
+          <li>Chope de 500 ml em dobro nas torneiras leves</li>
+          <li>Petisco do dia com 20% de desconto</li>
+          <li>Paddle com 5 por R$ 29</li>
+        </ul>
+      </div>
+      <ol class="days">
+        <li class="off"><b>Seg</b><span>Fechado</span></li>
+        <li><b>Ter</b><span>Noite do burger: segundo burger com 30% off</span></li>
+        <li><b>Qua</b><span>Quiz de boteco às 20h30, equipes de até 5 pessoas</span></li>
+        <li><b>Qui</b><span>Rodada de rótulo novo na torneira, com conversa do cervejeiro</span></li>
+        <li><b>Sex</b><span>Jogo no telão e DJ depois das 22h</span></li>
+        <li><b>Sáb</b><span>Música ao vivo às 21h, casa aberta até 1h</span></li>
+        <li><b>Dom</b><span>Futebol, torre em dobro no segundo tempo e fechamos meia-noite</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="historia" class="sec story">
+    <div class="sec-head">
+      <h2>Nossa<br>história</h2>
+    </div>
+    <div class="story-body">
+      <p class="big">Começou numa garagem, com panela de 20 litros e um vizinho que sempre aparecia na hora da prova.</p>
+      <p>A turma da garagem cresceu, a panela virou tanque e o balcão virou casa. Hoje a Lúpulo Vivo faz o chope que gosta de beber e serve do jeito que gosta de ser servida: sem pose, sem fila de pedido e sem copo morno.</p>
+      <p>O rótulo da casa pode mudar toda semana. O combinado não muda: cerveja bem tirada, comida na hora e mesa para quem chega junto.</p>
+      <svg class="hop-s" viewBox="0 0 64 64" aria-hidden="true"><use href="#hop"/></svg>
+    </div>
+  </section>
+
+  <section id="reserva" class="sec reserve">
+    <div class="sec-head">
+      <h2>Reserve a mesa<br>ou o salão</h2>
+      <p>Aniversário, confraternização ou jogo com a turma. Preencha, o WhatsApp abre com a mensagem pronta e a gente confirma.</p>
+    </div>
+    <div class="res-grid">
       <form id="form" novalidate>
         <label>Nome
           <input name="nome" autocomplete="given-name" required>
@@ -129,49 +240,74 @@
             <select name="hora"><option>18h</option><option>19h</option><option selected>20h</option><option>21h</option><option>22h</option></select>
           </label>
         </div>
-        <label>Pessoas
-          <select name="pessoas">
-            <option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>8</option><option>10</option><option>12</option>
-          </select>
-        </label>
-        <label>Onde prefere sentar
-          <select name="lugar"><option>Tanto faz</option><option>Calçada</option><option>Salão</option><option>Perto do palco</option></select>
-        </label>
-        <button class="btn" type="submit">Reservar pelo WhatsApp</button>
-        <p class="error" id="err" role="alert" hidden></p>
+        <div class="row">
+          <label>Pessoas
+            <select name="pessoas">
+              <option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>8</option><option>10</option><option>12</option><option>20</option>
+            </select>
+          </label>
+          <label>Onde prefere sentar
+            <select name="lugar"><option>Tanto faz</option><option>Calçada</option><option>Salão</option><option>Perto do telão</option><option>Perto do palco</option></select>
+          </label>
+        </div>
+        <p id="err" class="err" role="alert" hidden></p>
+        <button class="btn" type="submit">Pedir reserva no WhatsApp</button>
       </form>
+      <aside class="priv">
+        <p class="mono label">Eventos privados</p>
+        <h3>Feche a casa</h3>
+        <p>Salão com até 60 pessoas, telão, som, torre de chope e cardápio fechado. Fale com a gente e monte o seu.</p>
+        <a class="btn btn-ghost" data-wa="Olá! Quero um orçamento para evento privado." href="https://wa.me/5500900000000">Pedir orçamento</a>
+      </aside>
     </div>
   </section>
 
-  <section id="contato" class="block">
-    <h2>Onde fica</h2>
-    <div class="contact">
+  <section id="local" class="sec where">
+    <div class="sec-head">
+      <h2>Onde<br>a gente tá</h2>
+    </div>
+    <div class="where-grid">
       <div>
-        <h3>Endereço</h3>
-        <p>Rua Direita, 77<br>Centro, Sua Cidade</p>
-        <p><a class="link" href="https://www.google.com/maps/search/?api=1&query=Rua+Direita+77" target="_blank" rel="noopener">Abrir no Google Maps</a></p>
-      </div>
-      <div>
-        <h3>Horário</h3>
+        <p class="mono label">Endereço</p>
+        <p class="addr">Rua do Lúpulo, 420<br>Centro, Sorocaba/SP</p>
+        <p class="mono label">Horários</p>
         <table class="hours">
-          <tr><th scope="row">Segunda</th><td>fechado</td></tr>
-          <tr><th scope="row">Terça a domingo</th><td>17h à meia-noite</td></tr>
-          <tr><th scope="row">Sábado</th><td>17h à 1h</td></tr>
+          <tr><th>Segunda</th><td>Fechado</td></tr>
+          <tr><th>Terça a sexta</th><td>17h às 24h</td></tr>
+          <tr><th>Sábado</th><td>17h à 1h</td></tr>
+          <tr><th>Domingo</th><td>17h às 24h</td></tr>
         </table>
-      </div>
-      <div>
-        <h3>WhatsApp</h3>
+        <p class="mono label">Contato</p>
         <p><a class="link" data-wa="Olá! Tenho uma dúvida." data-phone href="https://wa.me/5500900000000">(00) 90000-0000</a></p>
-        <p>Reservas, eventos e confraternizações.</p>
       </div>
+      <svg class="map" viewBox="0 0 400 300" role="img" aria-label="Mapa estilizado do bairro, com a Lúpulo Vivo marcada">
+        <rect width="400" height="300" fill="#E4DDD2"/>
+        <g stroke="#1A1A18" stroke-width="3" fill="none"><path d="M0 90H400M0 210H400M110 0V300M290 0V300"/><path d="M0 40L400 140" stroke-width="2" stroke-dasharray="6 6"/></g>
+        <g fill="#CFC7B9" stroke="#1A1A18" stroke-width="2"><rect x="18" y="106" width="78" height="90"/><rect x="126" y="106" width="150" height="90"/><rect x="306" y="106" width="78" height="90"/><rect x="18" y="226" width="78" height="60"/><rect x="306" y="226" width="78" height="60"/></g>
+        <rect x="126" y="226" width="150" height="60" fill="#F5A623" stroke="#1A1A18" stroke-width="2"/>
+        <g transform="translate(200 150)"><path d="M0 -50C-20 -50 -34 -36 -34 -18C-34 6 0 40 0 40S34 6 34 -18C34 -36 20 -50 0 -50Z" fill="#146FF8" stroke="#1A1A18" stroke-width="4"/><use href="#hop" x="-17" y="-36" width="34" height="34" style="color:#F0EBE4"/></g>
+        <text x="201" y="262" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="14" textLength="140" lengthAdjust="spacingAndGlyphs" fill="#1A1A18">RUA DO LÚPULO, 420</text>
+      </svg>
     </div>
   </section>
 </main>
 
-<footer class="foot">
-  <span><span data-brand>Boteco Azulejo</span>. Beba com moderação. Venda proibida para menores de 18 anos.</span>
-  <span>Site de demonstração com conteúdo de exemplo.</span>
+<footer>
+  <div class="foot-top">
+    <div>
+      <svg class="logo" viewBox="0 0 48 48" aria-hidden="true"><rect x="1.500" y="1.500" width="45" height="45" fill="#146FF8" stroke="#F0EBE4" stroke-width="3"/><use href="#hop" x="8" y="6" width="32" height="32" style="color:#F0EBE4"/><rect x="1.500" y="38" width="45" height="8.500" fill="#1A1A18"/><text x="24" y="45" text-anchor="middle" font-family="Anton, Impact, sans-serif" font-size="7" textLength="38" lengthAdjust="spacingAndGlyphs" fill="#F5A623">TAP HOUSE</text></svg>
+      <b class="fbrand" data-brand>Lúpulo Vivo</b>
+    </div>
+    <nav aria-label="Rodapé"><a href="#torneiras">Na torneira</a><a href="#comida">Comida</a><a href="#agenda">Agenda</a><a href="#reserva">Reservas</a><a href="#local">Onde</a></nav>
+  </div>
+  <p class="abuse">Beba com moderação. Venda proibida para menores de 18 anos.</p>
+  <p class="demo mono">Site de demonstração · inspirado em cervejarias e pubs artesanais, sem vínculo com marcas reais</p>
 </footer>
+
+<div class="age" id="age" role="dialog" aria-labelledby="age-t" hidden>
+  <p id="age-t"><b>Você tem 18 anos ou mais?</b> Este site fala de bebida alcoólica.</p>
+  <div><button class="btn btn-sm" data-age="sim">Tenho 18+</button><button class="btn btn-sm btn-ghost" data-age="nao">Ainda não</button></div>
+</div>
 
 <script src="script.js"></script>
 </body>
