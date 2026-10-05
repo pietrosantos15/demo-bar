@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Boteco Azulejo | Chope gelado, petisco e samba</title>
+<meta name="description" content="Cardápio, happy hour, agenda de música ao vivo e reserva de mesa pelo WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Chivo:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="#inicio" data-brand>Boteco Azulejo</a>
+  <nav aria-label="Principal">
+    <a href="#cardapio">Cardápio</a>
+    <a href="#agenda">Agenda</a>
+    <a href="#reservas">Reservas</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <p class="status" id="status" aria-live="polite">Confira o horário</p>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="sign">
+      <h1>Chope gelado, petisco bom e samba às quartas</h1>
+      <p>Boteco de esquina com mesa na calçada, música ao vivo e preço justo. Reserve a sua pelo WhatsApp e chegue direto para sentar.</p>
+      <div class="actions">
+        <a class="btn" href="#reservas">Reservar mesa</a>
+        <a class="btn btn-ghost" href="#cardapio">Ver cardápio</a>
+      </div>
+    </div>
+
+    <svg class="glass" viewBox="0 0 220 320" role="img" aria-label="Ilustração de um copo de chope gelado com espuma">
+      <defs>
+        <linearGradient id="chope" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFD470"/><stop offset="1" stop-color="#F0A21E"/></linearGradient>
+        <clipPath id="copo"><path d="M44 62h132l-14 224a14 14 0 0 1-14 13H72a14 14 0 0 1-14-13z"/></clipPath>
+      </defs>
+      <path d="M176 100h22a20 20 0 0 1 20 20v70a20 20 0 0 1-20 20h-26" fill="none" stroke="#FAFAF7" stroke-width="12" stroke-linecap="round"/>
+      <path d="M44 62h132l-14 224a14 14 0 0 1-14 13H72a14 14 0 0 1-14-13z" fill="url(#chope)"/>
+      <g clip-path="url(#copo)" fill="#FAFAF7" opacity=".85">
+        <circle class="b b1" cx="88" cy="270" r="4"/><circle class="b b2" cx="118" cy="280" r="3"/>
+        <circle class="b b3" cx="140" cy="265" r="5"/><circle class="b b4" cx="104" cy="285" r="3.5"/><circle class="b b5" cx="128" cy="275" r="2.5"/>
+      </g>
+      <path d="M44 62h132l-14 224a14 14 0 0 1-14 13H72a14 14 0 0 1-14-13z" fill="none" stroke="#FAFAF7" stroke-width="8" stroke-linejoin="round"/>
+      <g fill="#FAFAF7">
+        <circle cx="62" cy="52" r="26"/><circle cx="96" cy="40" r="30"/><circle cx="134" cy="40" r="30"/><circle cx="164" cy="54" r="24"/><rect x="48" y="52" width="124" height="30"/>
+      </g>
+    </svg>
+  </section>
+
+  <div class="ribbon"><p><strong>Happy hour</strong> de terça a sexta, das 17h às 20h: chope em dobro.</p></div>
+
+  <section id="cardapio" class="block">
+    <h2>Cardápio</h2>
+    <p class="lead">Valores de exemplo. O cardápio completo e a carta de drinks ficam na mesa e no WhatsApp.</p>
+    <div class="menu">
+      <div>
+        <h3>Chopes</h3>
+        <ul class="prices">
+          <li><span>Pilsen, 300 ml</span><i></i><b>R$ 9</b></li>
+          <li><span>Pilsen, 500 ml</span><i></i><b>R$ 14</b></li>
+          <li><span>IPA, 400 ml</span><i></i><b>R$ 22</b></li>
+          <li><span>Escuro, 400 ml</span><i></i><b>R$ 18</b></li>
+          <li><span>Torre de chope, 3 litros</span><i></i><b>R$ 89</b></li>
+        </ul>
+        <h3>Drinks</h3>
+        <ul class="prices">
+          <li><span>Caipirinha</span><i></i><b>R$ 22</b></li>
+          <li><span>Caipiroska</span><i></i><b>R$ 26</b></li>
+          <li><span>Gin tônica</span><i></i><b>R$ 34</b></li>
+          <li><span>Aperol spritz</span><i></i><b>R$ 32</b></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Petiscos</h3>
+        <ul class="prices">
+          <li><span>Mandioca frita</span><i></i><b>R$ 32</b></li>
+          <li><span>Bolinho de bacalhau, 6 unidades</span><i></i><b>R$ 42</b></li>
+          <li><span>Torresmo crocante</span><i></i><b>R$ 36</b></li>
+          <li><span>Pastel de feira, 4 unidades</span><i></i><b>R$ 34</b></li>
+          <li><span>Tábua de frios</span><i></i><b>R$ 68</b></li>
+          <li><span>Caldinho de feijão</span><i></i><b>R$ 18</b></li>
+        </ul>
+        <h3>Sem álcool</h3>
+        <ul class="prices">
+          <li><span>Refrigerante</span><i></i><b>R$ 7</b></li>
+          <li><span>Suco natural</span><i></i><b>R$ 12</b></li>
+          <li><span>Água com gás</span><i></i><b>R$ 6</b></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip" aria-hidden="true"></div>
+
+  <section id="agenda" class="block">
+    <h2>Agenda da semana</h2>
+    <table class="agenda">
+      <tbody>
+        <tr><th scope="row">Terça</th><td>Pagode no sofá, com violão e voz</td><td>19h</td></tr>
+        <tr><th scope="row">Quarta</th><td>Samba de raiz com roda aberta</td><td>20h</td></tr>
+        <tr><th scope="row">Quinta</th><td>Quiz de boteco, com rodada de chope para o time vencedor</td><td>20h</td></tr>
+        <tr><th scope="row">Sexta</th><td>DJ de MPB, rock nacional e funk antigo</td><td>21h</td></tr>
+        <tr><th scope="row">Sábado</th><td>Roda de samba e feijoada leve</td><td>16h</td></tr>
+        <tr><th scope="row">Domingo</th><td>Futebol no telão, com petiscos em dobro</td><td>16h</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="reservas" class="block block-blue">
+    <div class="book">
+      <div>
+        <h2>Reserve a sua mesa</h2>
+        <p class="lead">Preencha e a mensagem abre pronta no WhatsApp. Seguramos a mesa por 15 minutos depois do horário marcado. Para grupos acima de 12 pessoas, chame direto.</p>
+      </div>
+      <form id="form" novalidate>
+        <label>Nome
+          <input name="nome" autocomplete="given-name" required>
+        </label>
+        <div class="row">
+          <label>Data
+            <input type="date" name="data" required>
+          </label>
+          <label>Horário
+            <select name="hora"><option>18h</option><option>19h</option><option selected>20h</option><option>21h</option><option>22h</option></select>
+          </label>
+        </div>
+        <label>Pessoas
+          <select name="pessoas">
+            <option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>8</option><option>10</option><option>12</option>
+          </select>
+        </label>
+        <label>Onde prefere sentar
+          <select name="lugar"><option>Tanto faz</option><option>Calçada</option><option>Salão</option><option>Perto do palco</option></select>
+        </label>
+        <button class="btn" type="submit">Reservar pelo WhatsApp</button>
+        <p class="error" id="err" role="alert" hidden></p>
+      </form>
+    </div>
+  </section>
+
+  <section id="contato" class="block">
+    <h2>Onde fica</h2>
+    <div class="contact">
+      <div>
+        <h3>Endereço</h3>
+        <p>Rua Direita, 77<br>Centro, Sua Cidade</p>
+        <p><a class="link" href="https://www.google.com/maps/search/?api=1&query=Rua+Direita+77" target="_blank" rel="noopener">Abrir no Google Maps</a></p>
+      </div>
+      <div>
+        <h3>Horário</h3>
+        <table class="hours">
+          <tr><th scope="row">Segunda</th><td>fechado</td></tr>
+          <tr><th scope="row">Terça a domingo</th><td>17h à meia-noite</td></tr>
+          <tr><th scope="row">Sábado</th><td>17h à 1h</td></tr>
+        </table>
+      </div>
+      <div>
+        <h3>WhatsApp</h3>
+        <p><a class="link" data-wa="Olá! Tenho uma dúvida." data-phone href="https://wa.me/5500900000000">(00) 90000-0000</a></p>
+        <p>Reservas, eventos e confraternizações.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <span><span data-brand>Boteco Azulejo</span>. Beba com moderação. Venda proibida para menores de 18 anos.</span>
+  <span>Site de demonstração com conteúdo de exemplo.</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
